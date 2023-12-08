@@ -8,7 +8,7 @@ def index(request):
 def data(request):
     return render(request, 'shopmen/index.html')
 
-def basket(request, client_id=1):
+def basket(request, client_id):
     products = []
     client = Client.objects.filter(pk=client_id).first()
     orders = Order.objects.filter(customer=client).all()
